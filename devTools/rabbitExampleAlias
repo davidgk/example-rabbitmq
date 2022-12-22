@@ -1,2 +1,8 @@
-alias startDebug="yarn start:debug:local"
-alias upRabbit="yarn docker-compose:rmq-up:local"
+
+export PY_HOME=$HOME/development/personal/nestjs/rabbit
+export CLIENT_HOME=$PY_HOME/example-rabbit
+export MS_HOME=$PY_HOME/example-rabbit-ms
+alias startDebugCli="cd $CLIENT_HOME; yarn start:debug:local"
+alias startDebugMs="cd $MS_HOME; yarn start:debug:local"
+alias upRabbitCli="cd $CLIENT_HOME; yarn docker-compose:rmq-up:local"
+alias rstAlPy="cd $PY_HOME; source devTools/rabbitExampleAlias; cd -"

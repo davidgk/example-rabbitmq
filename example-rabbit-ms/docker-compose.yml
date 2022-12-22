@@ -1,0 +1,35 @@
+version: '3'
+
+networks:
+  network:
+    driver: bridge
+
+services:
+  api:
+    container_name: exampleRMQ
+    environment:
+      - NODE_ENV=${NODE_ENV}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: [ "yarn", "start:local" ]
+    env_file:
+      - .env.local
+    ports:
+      - ${PORT}:${PORT}
+#    depends_on:
+#      - postgres
+    networks:
+      - network
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+      - network
+

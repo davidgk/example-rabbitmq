@@ -5,5 +5,6 @@ export class CreateOrderDto {
   @IsNotEmpty()
   name: string;
 
+  @IsNotEmpty()
   price: number;
 }
