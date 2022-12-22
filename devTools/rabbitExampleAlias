@@ -1,0 +1,2 @@
+alias startDebug="yarn start:debug:local"
+alias upRabbit="yarn docker-compose:rmq-up:local"
