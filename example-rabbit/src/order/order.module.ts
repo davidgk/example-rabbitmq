@@ -10,7 +10,7 @@ import { MyCacheService } from '@commons/redis/redis.service';
   imports: [
     RmqModule.register({
       name: BILLING_SERVICE,
-    })
+    }),
   ],
   controllers: [OrderController],
   providers: [OrderService],

@@ -9,6 +9,7 @@ import { MyCacheService } from '@commons/redis/redis.service';
 export class MyCacheModule {
   static register(): DynamicModule {
     return CacheModule.registerAsync({
+      isGlobal: true,
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         ttl: configService.get('CACHE_TTL'),

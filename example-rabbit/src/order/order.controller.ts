@@ -1,11 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Body, CACHE_MANAGER, Controller, Get, Inject, Post } from '@nestjs/common';
 import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto/create-order.dto';
-import { UpdateOrderDto } from './dto/update-order.dto';
+import { Cache } from 'cache-manager';
 
 @Controller('order')
 export class OrderController {
-  constructor(private readonly orderService: OrderService) {}
+  constructor(
+    private readonly orderService: OrderService,
+    @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
+  ) {}
 
   @Post()
   create(@Body() createOrderDto: CreateOrderDto) {
@@ -16,5 +19,4 @@ export class OrderController {
   findAll() {
     return this.orderService.findAll();
   }
-
 }
