@@ -20,6 +20,7 @@ export class RmqModule {
           {
             name,
             useFactory: (configService: ConfigService) => ({
+              isGlobal: true,
               transport: Transport.RMQ,
               options: {
                 urls: [configService.get<string>('RABBIT_MQ_URI')],

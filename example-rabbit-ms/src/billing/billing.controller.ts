@@ -12,7 +12,7 @@ export class BillingController {
 
   @EventPattern('order_created')
   async handleOrderCreated(@Payload() data: any, @Ctx() context: RmqContext) {
-    this.billingService.bill(data);
+    await this.billingService.bill(data);
     this.rmqService.ack(context);
   }
 }

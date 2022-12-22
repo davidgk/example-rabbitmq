@@ -1,4 +1,4 @@
-# Example using Nest, RabbitMQ and MS 
+# Example using Nest, Redis, RabbitMQ and MS 
 
 
 ## Description
@@ -8,7 +8,7 @@
 ```
 source devTools/rabbitExampleAlias
 ```
-* run the rabbit mq container and create the queue "billing" through [Rabbit UI](http://localhost:15672)
+* run the rabbit mq container ( also will start redis container ) and create the queue "billing" through [Rabbit UI](http://localhost:15672)
 ```
 upRabbitCli
 ```

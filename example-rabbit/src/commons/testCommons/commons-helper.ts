@@ -1,5 +1,4 @@
 import * as faker from 'community-faker';
-import { TestingModule } from '@nestjs/testing';
 
 export function getRandomEmail(): string {
   return faker.internet.email();
