@@ -4,5 +4,6 @@ export CLIENT_HOME=$PY_HOME/example-rabbit
 export MS_HOME=$PY_HOME/example-rabbit-ms
 alias startDebugCli="cd $CLIENT_HOME; yarn start:debug:local"
 alias startDebugMs="cd $MS_HOME; yarn start:debug:local"
-alias upRabbitCli="cd $CLIENT_HOME; yarn docker-compose:rmq-up:local"
+alias upRabbitAndRedis="cd $MS_HOME; yarn docker-compose:rmq-up:local;cd -"
+alias upRedisCli="cd $MS_HOME; yarn docker-compose:cache-up:local; cd -"
 alias rstAlPy="cd $PY_HOME; source devTools/rabbitExampleAlias; cd -"
