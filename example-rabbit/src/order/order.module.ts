@@ -5,11 +5,6 @@ import { BILLING_SERVICE } from '@config/constants';
 import { RmqModule } from '@commons/rmq/rmq.module';
 
 @Module({
-  imports: [
-    RmqModule.register({
-      name: BILLING_SERVICE,
-    }),
-  ],
   controllers: [OrderController],
   providers: [OrderService],
 })
